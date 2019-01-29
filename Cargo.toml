@@ -1,0 +1,25 @@
+[package]
+name = "tower-grpc-tls-client-auth-example"
+version = "0.1.0"
+authors = ["Ian P. Cooke <ipc@informatic.io>"]
+edition = "2018"
+
+[dependencies]
+log = "0.4"
+env_logger = { version = "0.5", default-features = false }
+futures = "0.1"
+bytes = "0.4"
+http = "0.1.14"
+h2 = "0.1.11"
+prost = "0.4"
+prost-derive = "0.4"
+tokio = "0.1"
+tokio-connect = { git = "https://github.com/carllerche/tokio-connect" }
+tower-h2 = { git = "https://github.com/tower-rs/tower-h2" }
+tower-http = { git = "https://github.com/tower-rs/tower-http" }
+tower-service = { git = "https://github.com/tower-rs/tower"  }
+tower-grpc = { git = "https://github.com/tower-rs/tower-grpc" }
+tower-util = { git = "https://github.com/tower-rs/tower" }
+
+[build-dependencies]
+tower-grpc-build = { path = "../tower-grpc/tower-grpc-build" }

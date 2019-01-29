@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.informatic.greeter";
+option java_outer_classname = "GreeterProto";
+
+package greeter;
+
+service Greeter {
+    // Sends a greeting ; request must be sent via TLS with client authentication.
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+// The name must match CN of the client certificate.
+message HelloRequest {
+    string name = 1;
+}
+
+// The response message containing the greeting.
+message HelloReply {
+    string message = 1;
+}
