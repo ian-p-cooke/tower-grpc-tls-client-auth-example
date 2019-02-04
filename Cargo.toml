@@ -20,6 +20,10 @@ tower-http = { git = "https://github.com/tower-rs/tower-http" }
 tower-service = { git = "https://github.com/tower-rs/tower"  }
 tower-grpc = { git = "https://github.com/tower-rs/tower-grpc" }
 tower-util = { git = "https://github.com/tower-rs/tower" }
+rustls = "0.15.1"
+tokio-rustls = "0.9.0"
+tokio-tcp = "0.1.3"
+webpki = "0.19.1"
 
 [build-dependencies]
 tower-grpc-build = { path = "../tower-grpc/tower-grpc-build" }
