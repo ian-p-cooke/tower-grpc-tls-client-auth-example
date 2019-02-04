@@ -42,7 +42,7 @@ pub fn main() {
 
             client
                 .say_hello(Request::new(HelloRequest {
-                    name: "What is in a name?".to_string(),
+                    name: "ponytown client".to_string(),
                 }))
                 .map_err(|e| panic!("gRPC request failed; err={:?}", e))
         })
