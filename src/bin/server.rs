@@ -116,8 +116,7 @@ pub fn main() {
                     let new_service = server::GreeterServer::new(greet);
                     let h2_settings = Default::default();
                     let mut h2 = Server::new(new_service, h2_settings, DefaultExecutor::current());
-                    tokio::spawn(h2.serve(stream).map_err(|e| eprintln!("Error: {:?}", e)));
-                    Ok(())
+                    h2.serve(stream).map_err(|e| eprintln!("Error: {:?}", e))
                 });
 
             tokio::spawn(connection);
