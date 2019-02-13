@@ -106,7 +106,7 @@ pub fn main() {
 
             let connection = tls_acceptor
                 .accept(sock)
-                .map_err(|e| eprintln!("Error: {:?}", e))
+                .map_err(|e| eprintln!("TLS Accept Error: {:?}", e))
                 .and_then(|stream| {
                     let greet = {
                         let (_, session) = stream.get_ref();
@@ -116,7 +116,7 @@ pub fn main() {
                     let new_service = server::GreeterServer::new(greet);
                     let h2_settings = Default::default();
                     let mut h2 = Server::new(new_service, h2_settings, DefaultExecutor::current());
-                    h2.serve(stream).map_err(|e| eprintln!("Error: {:?}", e))
+                    h2.serve(stream).map_err(|e| eprintln!("H2 Serve Error: {:?}", e))
                 });
 
             tokio::spawn(connection);
